@@ -1,5 +1,5 @@
 # Plant-Disease-Detection
-Plant Disease Detection thru Classification, Interfacing with ESP32 and WebApp(U/D)
+Plant Disease Detection through Classification, Interfacing with ESP32 and WebApp(U/D)
 
 
 
