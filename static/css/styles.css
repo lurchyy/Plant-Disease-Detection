@@ -1,0 +1,228 @@
+body {
+    margin: 0;
+    background-color: #0d0d0d;
+    background: linear-gradient(to right, black, #0d0d0d);
+    position: relative; /* Create a positioning context for the image */
+    height: 100vh; /* Set the body to full viewport height */
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:visited {
+    text-decoration: none;
+    color: inherit;
+}
+
+.header-container {
+    position: relative;
+}
+
+.header {
+    z-index: 100;
+    color: white;
+    background-color: black;
+    top: 0;
+    align-items: center;
+    display: flex;
+    transition: top .3s ease, box-shadow .3s ease;
+    border-bottom: 6px #4ede7d solid;
+    justify-content: space-evenly;
+}
+
+.header.scrolled {
+    top: 5px;
+    box-shadow: 5px 7px 10px rgba(0, 0, 0, .5);
+}
+
+.header-btn {
+    color: #4ede7d;
+    font-weight: 800;
+    font-size: 1.5rem;
+    font-family: 'Nunito', sans-serif;
+    transition: background-color .3s, color .3s;
+    padding: 20px;
+    padding-right: 30px;
+    padding-left: 30px;
+    align-items: center;
+    display: flex;
+}
+
+.header-btn:hover {
+    background-color: #4ede7d;
+    color: black;
+    cursor: pointer;
+}
+
+.header-btn img {
+    transition: filter .3s ease;
+}
+
+.header-btn:hover img {
+    filter: brightness(0);
+}
+
+.header-btn-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo {
+    height: 6vh;
+    width: auto;
+}
+
+.logo-container:hover {
+    cursor: pointer;
+}
+
+.title {
+    color: #4ede7d;
+    font-family: 'Nunito', sans-serif;
+    font-size: 3rem;
+    border-radius: 16px;
+    padding: 10px;
+    font-weight: 700;
+}
+
+.esp32cam {
+    border: solid #4ede7d;
+    border-width: 10px;
+    height: 70vh;
+    width: 60%;
+    margin-left: 60px;
+    color: white;
+    border-radius: 16px;
+}
+
+.esp32cam-container {
+    display: flex;
+}
+
+.button-30-container {
+    margin-left: 10%;
+    margin-top: 10%;
+}
+
+/* CSS */
+.button-30 {
+  align-items: center;
+  appearance: none;
+  background-color: #3aa35d;
+  border-radius: 4px;
+  border-width: 0;
+  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#2e844a 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: rgb(195, 195, 195);
+  cursor: pointer;
+  display: inline-flex;
+  font-family: "JetBrains Mono",monospace;
+  height: 48px;
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  overflow: hidden;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition: box-shadow .15s,transform .15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow,transform;
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.button-30:focus {
+  box-shadow: #2e844a 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #2e844a 0 -3px 0 inset;
+}
+
+.button-30:hover {
+  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #2e844a 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+.button-30:active {
+  box-shadow: #2e844a 0 3px 7px inset;
+  transform: translateY(2px);
+}
+
+.bottom-right-image {
+    position: absolute; /* Position the image absolutely within the body */
+    top: 65%;
+    left: 60%;
+    opacity: .5
+}
+
+.custum-file-upload {
+    height: 200px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: space-between;
+    gap: 20px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    border: 2px dashed #e8e8e8;
+    background-color: #212121;
+    padding: 1.5rem;
+    border-radius: 10px;
+}
+
+.custum-file-upload .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.custum-file-upload .icon svg {
+    height: 80px;
+    fill: #e8e8e8;
+}
+
+.custum-file-upload .text {
+    display: flex;  
+    align-items: center;
+    justify-content: center;
+}
+
+.custum-file-upload .text span {
+    font-weight: 400;
+    color: #e8e8e8;
+}
+
+.custum-file-upload input {
+    display: none;
+}
+
+.cards-container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.card {
+    border: solid #4ede7d 2px;
+    height: 60vh;
+    width: 40%;
+    border-radius: 50px;
+    color: white;
+    font-family:'Courier New', Courier, monospace;
+    font-weight: 700;
+    font-size: 2rem;
+    box-sizing: border-box;
+    padding: 20px;
+}

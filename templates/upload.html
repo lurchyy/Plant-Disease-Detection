@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>
+        Farmers
+    </title>
+
+    <script>
+        const imageInput = document.getElementById("imageInput");
+        const imagePreview = document.getElementById("imagePreview");
+
+        imageInput.addEventListener("change", function () {
+            if (imageInput.files && imageInput.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    imagePreview.src = e.target.result;
+                };
+                reader.readAsDataURL(imageInput.files[0]);
+            }
+        });
+    </script>
+</head>
+<body>
+    <div class="header">
+        <div class="logo-container">
+            <img src="{{ url_for('static', filename='logo.jpg') }}" alt="farmers_logo" class="logo">
+        </div>
+        <a href="{{ url_for('home') }}">
+                <div class="header-btn">
+                Home
+            </div>
+        </a>
+        <a href="{{ url_for('capture') }}">
+                <div class="header-btn">
+                Capture
+            </div>
+        </a>
+        <a href="{{ url_for('upload') }}">
+            <div class="header-btn" style="color: black; background-color:#4ede7d;">
+                Upload
+            </div>
+        </a>
+        <a href="{{ url_for('about') }}">
+            <div class="header-btn">
+                About
+            </div>
+        </a>
+    </div>
+
+    <center>
+        <div class="title" style="font-weight: 1000">
+            Plant Disease Detector
+        </div>
+
+        <form method="POST" enctype="multipart/form-data">
+            {{ form.hidden_tag() }}
+            {{ form.file() }}
+            {{ form.submit() }}
+        </form>
+    </center>
+        
+    <img src="{{ url_for('static', filename='ghaas.png') }}" class="bottom-right-image">
+
+</body>
+</html>

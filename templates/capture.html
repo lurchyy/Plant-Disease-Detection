@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>
+        Farmers
+    </title>
+    <script>
+        function captureImage() {
+            var camImageElement = document.getElementById("camImage");
+
+            var a = document.createElement('a');
+            a.href = camImageElement.src;
+            a.download = 'leaf.jpg'
+
+            console.log(a.href);
+
+            a.click();
+        }
+    </script>
+</head>
+<body>
+    <div class="header">
+        <div class="logo-container">
+            <img src="{{ url_for('static', filename='logo.jpg') }}" alt="farmers_logo" class="logo">
+        </div>
+        <a href="{{ url_for('home') }}">
+                <div class="header-btn">
+                Home
+            </div>
+        </a>
+        <a href="{{ url_for('capture') }}">
+                <div class="header-btn" style="color: black; background-color:#4ede7d;">
+                Capture
+            </div>
+        </a>
+        <a href="{{ url_for('upload') }}">
+            <div class="header-btn">
+                Upload
+            </div>
+        </a>
+        <a href="{{ url_for('about') }}">
+            <div class="header-btn">
+                About
+            </div>
+        </a>
+    </div>
+
+    <center>
+        <div class="title" style="font-weight: 1000">
+            Plant Disease Detector
+        </div>
+    </center>
+        
+    <div class="esp32cam-container">
+        <div class="esp32cam">
+            <img id="camImage" src="http://192.168.45.196/stream" width="640" height="480">
+        </div>
+        <div class="button-30-container">
+            <form method="POST" action="{{ url_for('captured') }}">
+                <button onclick="captureImage()" class="button-30" role="button" style="height:10vh">Capture</button>
+            </form>
+        </div>
+    </div>
+
+    <img src="{{ url_for('static', filename='ghaas.png') }}" class="bottom-right-image" style="z-index: -100">
+
+</body>
+</html>

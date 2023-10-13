@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>
+        Farmers
+    </title>
+</head>
+<body>
+    <div class="header">
+        <div class="logo-container">
+            <img src="{{ url_for('static', filename='logo.jpg') }}" alt="farmers_logo" class="logo">
+        </div>
+        <a href="{{ url_for('home') }}">
+                <div class="header-btn">
+                Home
+            </div>
+        </a>
+        <a href="{{ url_for('capture') }}">
+                <div class="header-btn">
+                Capture
+            </div>
+        </a>
+        <a href="{{ url_for('upload') }}">
+            <div class="header-btn">
+                Upload
+            </div>
+        </a>
+        <a href="{{ url_for('about') }}">
+            <div class="header-btn" style="color: black; background-color:#4ede7d;">
+                About
+            </div>
+        </a>
+    </div>
+
+    <center>
+        <div class="title" style="font-weight: 1000">
+            Team Farmers
+        </div>
+        <p style="color: white; font-size: 1.5rem; 
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 
+        'Lucida Sans', Arial, sans-serif;
+        padding-left: 5%; padding-right: 5%">
+            This project was developed for the 'ByteCraft' hackathon in our college's technical fest 'TantraFiesta'.
+        </p>
+        <div class="cards-container">
+            <div class="card">
+                Our Team
+            </div>
+        </div>
+    </center>
+
+</body>
+</html>

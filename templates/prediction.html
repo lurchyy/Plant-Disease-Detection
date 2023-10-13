@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>
+        Farmers
+    </title>
+</head>
+<body>
+    <div class="header">
+        <div class="logo-container">
+            <img src="{{ url_for('static', filename='logo.jpg') }}" alt="farmers_logo" class="logo">
+        </div>
+        <a href="{{ url_for('home') }}">
+                <div class="header-btn">
+                Home
+            </div>
+        </a>
+        <a href="{{ url_for('capture') }}">
+                <div class="header-btn">
+                Capture
+            </div>
+        </a>
+        <a href="{{ url_for('upload') }}">
+            <div class="header-btn">
+                Upload
+            </div>
+        </a>
+        <a href="{{ url_for('about') }}">
+            <div class="header-btn">
+                About
+            </div>
+        </a>
+    </div>
+
+    <center>
+        <div class="title" style="font-weight: 1000">
+            Plant Disease Detector
+        </div>
+    </center>
+        
+    <div class="esp32cam-container">
+        <div class="esp32cam">
+            <img src="{{ prediction.image }}" align="middle"
+            style="height:50vh; width:50vh; position: relative; left: 30%; top: 8vh" />
+        </div>
+        <div class="button-30-container" style="color: white; margin-left: 2%">
+            <div style="color:white; font-family: 'Courier New', Courier, monospace; font-weight: 100; font-size: 1.5rem">
+                Plant: {{ prediction.results.plant }} <br>
+            </div>
+            <div style="color:white; font-family: 'Courier New', Courier, monospace; font-weight: 100; font-size: 1.5rem">
+                Disease: {{ prediction.results.disease }}
+            </div>
+        </div>
+    </div>
+
+    <img src="{{ url_for('static', filename='ghaas.png') }}" class="bottom-right-image" style="z-index: -100">
+
+</body>
+</html>
